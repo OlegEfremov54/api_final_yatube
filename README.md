@@ -1,39 +1,45 @@
-# **API for YaTube**
-## **Description**
-API for interacting with **YaTube**(https://github.com/LHLHLHE/yatube_project.git) project.
-### Authors
-Лев Халяпин
-## **How to start the project**
-Clone the repository and go to it on the command line:
+**API for YaTube**
+Описание
+API для проекта **YaTube**(https://github.com/:OlegEfremov54/api_final_yatube.git.
+**Автор**
+Олег Ефремов
+**Как запустить проект**
+Скопировать проект с ГИтхаба
 ```
-git clone https://github.com/LHLHLHE/api_yatube.git
+git clone https://github.com/:OlegEfremov54/api_final_yatube.git
 ```
 ```
 cd api_yatube
 ```
-Create and activate a venv:
+Создать окружение и активировать его при работе в Винде:
 ```
-python3 -m venv env
+python -m venv venv
+
+Или для работы на Маке :
+python3 -m venv venv
+Далее везеде для работы на маке использовать python3 вместо python
 ```
+source venv/bin/activate
 ```
-source env/bin/activate
+Инсталировать зависимости requirements.txt:
 ```
-Install dependencies from a file requirements.txt:
-```
-python3 -m pip install --upgrade pip
+python -m pip install --upgrade pip
 ```
 ```
 pip install -r requirements.txt
 ```
-Perform migrations:
+Сделать миграции:
 ```
-python3 manage.py migrate
+python manage.py migrate
+
+Если требуется создать супер Юзера
 ```
-Launch a project:
+Запустить проект:
 ```
-python3 manage.py runserver
-```
-## **Requirements**
+python manage.py runserver
+
+
+**Requirements - Требования**
 ```
 Django==2.2.16
 django-filter==21.1
@@ -45,22 +51,22 @@ PyJWT==2.1.0
 requests==2.26.0
 ```
 
-### Technologies
+### Technologies Какие технологии используем
 - Python 3.9
 - Django 2.2.16
 - Djangorestframework 3.12.4
 
-## **Examples of API requests**
+## **Примеры запросов API**
 ```
 GET /api/v1/posts/
 ```
-**Response sample**
+**Пример ответа**
 ```
 {
     "id": 0,
     "author": "string",
     "text": "string",
-    "pub_date": "2019-08-24T14:15:22Z",
+    "pub_date": "2023-04-24T14:15:22Z",
     "image": "string",
     "group": 0
 }
@@ -69,7 +75,7 @@ GET /api/v1/posts/
 ```
 POST /api/v1/posts/
 ```
-**Request sample**
+**Джейсончик**
 ```
 }
     "text": "string",
@@ -83,7 +89,7 @@ POST /api/v1/posts/
     "id": 0,
     "author": "string",
     "text": "string",
-    "pub_date": "2019-08-24T14:15:22Z",
+    "pub_date": "2023-04-24T14:15:22Z",
     "image": "string",
     "group": 0
 }
@@ -106,7 +112,7 @@ PUT /api/v1/posts/{id}/
     "id": 0,
     "author": "stringstring",
     "text": "string",
-    "pub_date": "2019-08-24T14:15:22Z",
+    "pub_date": "2023-04-24T14:15:22Z",
     "image": "string",
     "group": 0
 }
@@ -127,7 +133,7 @@ PATCH /api/v1/posts/{id}/
     "id": 0,
     "author": "stringstring",
     "text": "anotherstring",
-    "pub_date": "2019-08-24T14:15:22Z",
+    "pub_date": "2023-04-24T14:15:22Z",
     "image": "string",
     "group": 0
 }
@@ -147,7 +153,7 @@ GET /api/v1/posts/{post_id}/comments/
         "id": 0,
         "author": "string",
         "text": "string",
-        "created": "2019-08-24T14:15:22Z",
+        "created": "2023-04-24T14:15:22Z",
         "post": 0
     }
 ]
@@ -168,7 +174,7 @@ POST /api/v1/posts/{post_id}/comments/
     "id": 0,
     "author": "string",
     "text": "string",
-    "created": "2019-08-24T14:15:22Z",
+    "created": "2023-04-24T14:15:22Z",
     "post": 0
 }
 ```
@@ -190,26 +196,3 @@ POST /api/v1/jwt/create/
     "access": "string"
 }
 ```
-
-### License
-MIT License
-
-Copyright (c) 2021 Халяпин Лев
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
